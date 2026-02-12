@@ -1,0 +1,164 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: poppins, sans-serif;
+    background-color: hsl(27, 100%, 94%);
+}
+
+.ofertaproduto {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.foto {
+    width: 600px;
+}
+
+.informacoes {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    padding-left: 30px;
+    width: 450px;
+}
+
+.campo-personalizacao {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.fotologo {
+    width: 80px;
+    margin-right: 15px;
+}
+
+.fontelogo {
+    font-family: "Oswald", sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #311d0d;
+}
+
+.cabeçalho {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    padding-bottom: 20px;
+}
+
+.opçoescabeçalho {
+    margin: 0 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.nomedoproduto {
+    display: flex;
+    align-items: flex-start;
+    font-size: 20px;
+    font-weight: bold;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;   /* maximo de 2 linhas */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.seletores {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-bottom: 15px;
+}
+
+.campoebotao {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+}
+
+.botaocomprar {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #311d0d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.campoquantidade {
+    display: flex;
+    flex-direction: column;
+}
+
+#quantidade {
+    padding: 10px;
+    margin-right: 50px;
+}
+
+.botaocomprar:hover {
+    background-color: #8a5216;
+}
+
+.descricao {
+    width: 70%;
+    margin-top: 70px;
+    margin-bottom: 50px;
+}
+
+.rodape {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    font-size: 13px;
+    color: #888;
+}
+
+.preçonegado {
+    text-decoration: line-through;
+    color: #888;
+    margin-right: 10px;
+}
+
+.preçoproduto {
+    font-size: 20px;
+}
+
+a {
+    text-decoration: none; /* remove o sublinhado */
+    color: inherit; /* usa a mesma cor do elemento pai */
+}
+
+@media (max-width: 768px) {
+   .ofertaproduto {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .foto {
+        width: 450px;
+    }
+
+    .informacoes {
+        padding-left: 0px;
+        width: 90%;
+    }
+
+    .descricao {
+        width: 90%;
+    }
+}

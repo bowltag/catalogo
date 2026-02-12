@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BowlTag® – Comedouro Personalizado Tipo 1 com Tigela de Inox</title>
+    <link rel="stylesheet" href="produto1style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="icon" href="imagens/Favicon.png" type="image/png">
+</head>
+<body>
+    <div class="logo">
+        <img class="fotologo" src="imagens/logo.png" alt="">
+        <p class="fontelogo">BowlTag</p>
+    </div>
+
+    <div class="cabeçalho"> 
+        <a class="opçoescabeçalho" href="paginasobre.html">Sobre</a>
+        <a class="opçoescabeçalho" href="index.html">Produtos</a>
+        <a class="opçoescabeçalho">Contatos</a>
+    </div>
+
+    <div class="ofertaproduto">
+        <img class="foto" src="imagens/Fotos pote tipo1/POTE BEGE.png" alt="">
+        <div class="informacoes">
+            <p class="nomedoproduto">BowlTag® – Comedouro Personalizado Tipo 1 com Tigela de Inox</p>
+
+            <div class="valores">
+                <div class="preçoproduto">R$49,90</div>
+                <div class="preçonegado">R$59,90</div>
+            </div>
+
+            <label for="Tamanho">Tam. da Tigela Inox:</label>
+            <select class="seletores" name="Tamanho" id="Tamanho">
+                <option value="13cm">13cm(330ml)</option>
+                <option value="15cm">15cm(500ml)</option>
+                <option value="17cm">17cm(750ml)</option>
+            </select>
+
+            <label for="cor">Cor:</label>
+            <select class="seletores" name="cor" id="cor">
+                <option value="Bege">Bege</option>
+                <option value="Branco">Branco</option>
+                <option value="Granito">Granito</option>
+                <option value="Roxo">Roxo</option>
+                <option value="Rosa">Rosa</option>
+                <option value="Azul">Azul</option>
+            </select>
+
+            <div class="campo-personalizacao">
+                <label for="nomePet">Nome do pet:</label>
+                <input class="seletores" type="text" id="nomePet" placeholder="Insira o nome do seu pet">
+            </div>
+
+            <div class="campoebotao">
+                <div class="campoquantidade">
+                    <label for="quantidade">Quant:</label>
+
+                    <input type="number" id="quantidade" name="quantidade"
+                        value="1" min="1" step="1">
+                </div>
+
+                <div class="botaocomprar">Fazer o pedido</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="descricao">
+        <p>🐾 Comedouro Personalizado BowlTag – Modelo Granulado</p><br>
+
+        <p>Transforme a hora da refeição do seu pet em um momento único.
+        O comedouro personalizado BowlTag é produzido com acabamento premium e acompanha tigela em inox removível, garantindo higiene, durabilidade e muito estilo.</p><br>
+
+        <p>Cada peça é personalizada com o nome do seu pet, tornando o produto exclusivo e perfeito para quem gosta de unir funcionalidade e personalidade no dia a dia.</p><br>
+
+        <p>✔ Personalização com o nome do pet</p>
+        <p>✔ Tigela interna em aço inox (removível para facilitar a limpeza)</p>
+        <p>✔ Material resistente e acabamento de alta qualidade</p>
+        <p>✔ Design moderno que combina com qualquer ambiente</p>
+        <p>✔ Ideal para cães e gatos</p><br>
+
+        <p>Disponível em diferentes cores e tamanhos para atender pets de todos os portes.</p><br>
+
+        <p>👉 Importante: informe o nome do pet no campo de personalização antes de finalizar o pedido.</p>
+    </div>
+
+    <div class="rodape"> Copyright © 2026 BowlTag. Todos os direitos reservados.</div>
+
+        <script>
+    /* ---------- TROCAR IMAGEM PELA COR ---------- */
+
+    const seletorCor = document.getElementById("cor");
+    const imagemProduto = document.querySelector(".foto");
+
+    const imagensCores = {
+        "Bege": "imagens/Fotos pote tipo1/POTE BEGE.png",
+        "Branco": "imagens/Fotos pote tipo1/POTE BRANCO.png",
+        "Granito": "imagens/Fotos pote tipo1/POTE GRANITO.png",
+        "Roxo": "imagens/Fotos pote tipo1/POTE ROXO.png",
+        "Rosa": "imagens/Fotos pote tipo1/POTE ROSA.png",
+        "Azul": "imagens/Fotos pote tipo1/POTE AZUL.png"
+    };
+
+    seletorCor.addEventListener("change", function() {
+        const corSelecionada = this.value;
+        imagemProduto.src = imagensCores[corSelecionada];
+    });
+
+
+    /* ---------- ALTERAR PREÇO PELO TAMANHO ---------- */
+
+    const seletorTamanho = document.getElementById("Tamanho");
+    const precoNormal = document.querySelector(".preçoproduto");
+    const precoNegado = document.querySelector(".preçonegado");
+
+    const precos = {
+        "13cm": 49.90,
+        "15cm": 59.90,
+        "17cm": 69.90
+    };
+
+    seletorTamanho.addEventListener("change", function() {
+        const tamanhoSelecionado = this.value;
+        const preco = precos[tamanhoSelecionado];
+        const precoAntigo = preco + 10;
+
+        precoNormal.innerText = `R$${preco.toFixed(2).replace(".", ",")}`;
+        precoNegado.innerText = `R$${precoAntigo.toFixed(2).replace(".", ",")}`;
+    });
+
+
+    /* ---------- ENVIAR PARA WHATSAPP ---------- */
+
+    const botaoComprar = document.querySelector(".botaocomprar");
+
+    botaoComprar.addEventListener("click", function() {
+
+        const nomeProduto = document.querySelector(".nomedoproduto").innerText;
+        const nomePet = document.getElementById("nomePet").value;
+        const quantidade = document.getElementById("quantidade").value;
+        const cor = seletorCor.value;
+        const tamanho = seletorTamanho.value;
+        const precoFinal = precoNormal.innerText;
+
+        if(nomePet.trim() === "") {
+            alert("Por favor, insira o nome do seu pet.");
+            return;
+        }
+
+        const mensagem = 
+    `Olá, gostaria de fazer um pedido:
+
+    Produto: ${nomeProduto}
+    Nome do pet: ${nomePet}
+    Cor: ${cor}
+    Tamanho da tigela: ${tamanho}
+    Quantidade: ${quantidade}
+    Preço unitário: ${precoFinal}`;
+
+        const numeroWhatsApp = "5581993905296";
+        const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
+
+        window.open(url, "_blank");
+    });
+    </script>
+
+</body>
+</html>
